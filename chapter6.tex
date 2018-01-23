@@ -979,13 +979,13 @@ $ rosparam list
 \begin{lstlisting}[language=ROS]
 $ rosservice call /ros_tutorial_srv 10 5  %*→ 四則演算の変数a、bを入力*)
 result: 15         %*→ デフォルトの加算*)
-$ rosparam set /calculation_method 2    %*→ パラメータを減算に変更*)
+$ rosparam set /ros_tutorial_srv/calculation_method 2    %*→ パラメータを減算に変更*)
 $ rosservice call /ros_tutorial_srv 10 5
 result: 5
-$ rosparam set /calculation_method 3   %* → パラメータを乗算に変更*)
+$ rosparam set /ros_tutorial_srv/calculation_method 3   %* → パラメータを乗算に変更*)
 $ rosservice call /ros_tutorial_srv 10 5
 result: 50
-$ rosparam set /calculation_method 4   %* → パラメータを除算に変更*)
+$ rosparam set /ros_tutorial_srv/calculation_method 4   %* → パラメータを除算に変更*)
 $ rosservice call /ros_tutorial_srv 10 5
 result: 2
 \end{lstlisting}
@@ -1016,7 +1016,6 @@ $ gedit union.launch
 union.launchファイルは、次のように設定する。
 
 \begin{lstlisting}[language=XML]
-union.launch
 <launch>
 <node pkg = "irvs_ros_tutorials" type = "ros_tutorial_msg_publisher" name = "msg_publisher1" />
 <node pkg = "irvs_ros_tutorials" type = "ros_tutorial_msg_subscriber" name = "msg_subscriber1" />
